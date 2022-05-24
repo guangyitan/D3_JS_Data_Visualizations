@@ -4,11 +4,24 @@
 *    2.7 - Loading external data
 */
 
-d3.json("/data/ages.json").then(data => {
-	data.forEach(d => {
+d3.csv("./data/ages.csv").then(data => {
+	console.log(data)
+})
+
+d3.tsv("./data/ages.tsv").then(data => {
+	console.log(data)
+})
+
+d3.tsv("./data/ages.tsv").then(data => {
+	console.log(data)
+})
+
+d3.json("./data/ages.json").then(data => {
+	data.forEach(d => (
 		d.age = Number(d.age)
-	})
-	
+	))
+	console.log(data)
+
 	const svg = d3.select("#chart-area").append("svg")
 	.attr("width", 400)
 	.attr("height", 400)
