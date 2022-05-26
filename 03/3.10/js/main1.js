@@ -45,7 +45,6 @@ d3.json("data/buildings.json").then(data => {
     .paddingInner(0.3)
     .paddingOuter(0.2)
   
-    console.log(HEIGHT)
   const y = d3.scaleLinear()
     .domain([0, d3.max(data, d => d.height)])
     .range([0, HEIGHT])

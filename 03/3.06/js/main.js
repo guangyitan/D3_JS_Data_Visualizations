@@ -1,4 +1,4 @@
-/*
+  /*
 *    main.js
 *    Mastering Data Visualization with D3.js
 *    3.6 - Band scales

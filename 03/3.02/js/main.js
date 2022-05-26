@@ -14,8 +14,8 @@ d3.json("data/buildings.json").then(data => {
   })
 
   const y = d3.scaleLinear()
-    .domain([0, 828])
-    .range([0, 400])
+    .domain([0, 828]) // eg: building heights, 828 because max height is 828
+    .range([0, 400]) // eg: screen pixels, 400 because max screen height pixels is 400
 
   const rects = svg.selectAll("rect")
     .data(data)
@@ -24,6 +24,6 @@ d3.json("data/buildings.json").then(data => {
     .attr("y", 0)
     .attr("x", (d, i) => (i * 60))
     .attr("width", 40)
-    .attr("height", d => y(d.height))
+    .attr("height", d => y(d.height))  // to revert back use y.invert(value)
     .attr("fill", "grey")
 })

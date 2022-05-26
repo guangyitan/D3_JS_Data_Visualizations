@@ -37,6 +37,7 @@ g.append("text")
 d3.json("data/buildings.json").then(data => {
   data.forEach(d => {
     d.height = Number(d.height)
+    console.log(d.height)
   })
 
   const x = d3.scaleBand()
