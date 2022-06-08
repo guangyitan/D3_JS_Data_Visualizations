@@ -82,8 +82,15 @@ function update(data) {
   const rects = g.selectAll("rect")
     .data(data)
 
+  console.log(rects) 
+  // enter = elements in our data array but not on page, shapes that need to be entered into the screen
+  // exit == elements on the page but not exist on the data array, elements that need to be removed from the screen
+  // groups = elements that currently exist on the screen
+
   // EXIT old elements not present in new data.
   rects.exit().remove()
+  console.log("2")
+  console.log(rects) 
 
   // UPDATE old elements present in new data.
   rects
@@ -99,4 +106,8 @@ function update(data) {
     .attr("width", x.bandwidth)
     .attr("height", d => HEIGHT - y(d.revenue))
     .attr("fill", "grey")
+
+  console.log("3")
+  console.log(rects) 
+  
 }

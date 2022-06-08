@@ -72,6 +72,10 @@ d3.json("data/data.json").then(function(data){
 	const formattedData = data.map(year => {
 		return year["countries"].filter(country => {
 			const dataExists = (country.income && country.life_exp)
+			console.log(dataExists)
+			// if(dataExists != null){
+			// 	debugger;
+			// }
 			return dataExists
 		}).map(country => {
 			country.income = Number(country.income)
@@ -80,11 +84,15 @@ d3.json("data/data.json").then(function(data){
 		})
 	})
 
+	debugger;
+	console.log(formattedData);
+
 	// run the code every 0.1 second
 	d3.interval(function(){
 		// at the end of our data, loop back
 		time = (time < 214) ? time + 1 : 0
 		update(formattedData[time])
+		debugger;
 	}, 100)
 
 	// first run of the visualization
@@ -92,6 +100,7 @@ d3.json("data/data.json").then(function(data){
 })
 
 function update(data) {
+	debugger;
 	// standard transition time for the visualization
 	const t = d3.transition()
 		.duration(100)
